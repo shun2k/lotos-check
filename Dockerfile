@@ -10,4 +10,4 @@ WORKDIR /lotos-check
 COPY Gemfile Gemfile.lock /lotos-check/
 RUN bundle install
 COPY . .
-CMD [ "rails", "s" ]
+# CMD [ "rails", "s" ]
