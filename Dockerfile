@@ -9,5 +9,3 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /lotos-check
 COPY Gemfile Gemfile.lock /lotos-check/
 RUN bundle install
-COPY . .
-CMD ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
