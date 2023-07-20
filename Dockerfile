@@ -9,5 +9,5 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /lotos-check
 COPY Gemfile Gemfile.lock /lotos-check/
 RUN bundle install
-COPY . .
+COPY . ${ROOT}
 CMD [ "rails", "s" ]
