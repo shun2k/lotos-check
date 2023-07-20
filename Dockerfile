@@ -9,5 +9,9 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /lotos-check
 COPY Gemfile Gemfile.lock /lotos-check/
 RUN bundle install
-COPY . ${ROOT}
+COPY . .
+
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT [ "entrypoint.sh" ]
 CMD [ "rails", "s" ]
